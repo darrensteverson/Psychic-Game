@@ -3,20 +3,22 @@ var allLetters = "abcdefghijklmnopqrstuvwxyz"
 // Variable declaring wins
 var wins = 0;
 // Variable declaring losses
-var loss = 0;
+var losses = 0;
 // Variable declaring guesses a user has
-var howManyGuesses = 10;
+var remainingGuesses = 10;
 // Variable with array declaring letters already used
-var usedLetters = []
+var usedLetters = [];
+// variable for computer random letter
+var computerGuess = computerGuess;
 
 
-function rules() {
-    alert("Click the button for your random number selection")
+// Generate computer random answer. Set a random letter to return as the computer guess. Console log the computer guess.
+computerGuess = allLetters[Math.floor(Math.random () * allLetters.length)]
+console.log(computerGuess);
+
+
+// allows user to click button for user random letter
+document.getElementById{"button"}.onclick = function() {
+
+
 }
-function rules ();
-
-
-
-// allows user to click button for their random letter
-document.getElementById{"button"}.onclick = function()
-    
