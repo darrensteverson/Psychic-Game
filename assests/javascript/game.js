@@ -10,10 +10,6 @@ var losses = 0;
 var remainingGuesses = 10;
 // Variable with array declaring letters already used
 var usedLetters = [];
-// variable for computer random letter
-var computerGuess = computerGuess;
-
-// create variables to hold the references
 
 // Create variables that hold references to the places in the HTML where we want to display things.
 var directionsText = document.getElementById("directions-text");
@@ -23,35 +19,39 @@ var winsText = document.getElementById("wins-text");
 var lossesText = document.getElementById("losses-text");
 var tiesText = document.getElementById("ties-text");
 
-
-
 // Generate computer random answer. Set a random letter to return as the computer guess. Console log the computer guess.
-computerGuess = letter[Math.floor(Math.random () * letter.length)]
-console.log(computerGuess);
+var computerGuess = letter[Math.floor(Math.random () * letter.length)]
+// console.log(computerGuess);
 
 //Make game fuction with keyup
 document.onkeyup = function(event) {
 
-// Determines which key was pressed.
-var userGuess = event.key;
+// Determines which key was pressed by user.
+var userChoice = event.key;
+usedLetters.push(userChoice)
+
+// If statement when user guesses computer random letter, Wins!!
+if (userChoice === computerGuess){
+    // Increases the wins by 1
+     wins++;
+    //  Resets the guesses to 10
+    remainingGuesses = 10;
+    // Resets the letters previously guessed to 0
+    remainingGuesses = 0;
+    // Resets the cuputer random letter
+    computerGuess = letter[Math.floor(Math.random () * letter.length)]
+ 
 
 
-
-// in win if statement reset numbers guessed array to 0, also guess count
-
-// If win , wins go up win++
-
-// Guess count -- , last thing in if statement
-
-
-
+}
 
  // Display the user and computer guesses, and wins/losses/ties.
- userChoiceText.textContent = "You chose: " + userGuess;
- computerChoiceText.textContent = "The computer chose: " + computerGuess;
- winsText.textContent = "wins: " + wins;
- lossesText.textContent = "losses: " + losses;
- tiesText.textContent = "ties: " + ties;
+ userChoiceText.textContent = "You chose: " + userChoice;
+ 
+//  User can not view what letter computer chose
+//  computerChoiceText.textContent = "The computer chose: " + computerGuess;
+ winsText.textContent = "Wins: " + wins;
+ lossesText.textContent = "Losses: " + losses;
+ tiesText.textContent = "Ties: " + ties;
 }
 
-}
