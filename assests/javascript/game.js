@@ -38,8 +38,9 @@ if (userChoice === computerGuess){
      wins++;
 //  Resets the guesses to 10
     remainingGuesses = 10;
-// Resets the letters previously guessed to 0
-    usedLetters = 0;
+// Resets the letters previously guessed to 0, restarts the game
+    usedLetters.length = 0;
+
 // Resets the cuputer random letter
     computerGuess = letter[Math.floor(Math.random () * letter.length)];
 }
@@ -50,8 +51,8 @@ else if (remainingGuesses === 0){
 losses++;
 //  Resets the guesses to 10
 remainingGuesses = 10;
- // Resets the letters previously guessed to 0
- usedLetters = 0;
+ // Resets the letters previously guessed to 0, restarts the game
+ usedLetters.length = 0;
  // Resets the cuputer random letter
  computerGuess = letter[Math.floor(Math.random () * letter.length)]
 }
